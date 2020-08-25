@@ -6,11 +6,11 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_opengl3.h"
 #include "imgui/imgui_impl_sdl.h"
+#include "helpers/common.h"
 
 #include <functional>
 #include <string>
 
-using Handle = std::function<void()>;
 
 class View {
 public:

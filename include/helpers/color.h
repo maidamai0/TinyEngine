@@ -1,3 +1,8 @@
+#pragma once
+
+#include "glm/glm.hpp"
+#include <vector>
+
 namespace color{
   glm::vec3 black = glm::vec3(0.0);
   glm::vec3 white = glm::vec3(1.0);

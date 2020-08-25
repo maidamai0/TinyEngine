@@ -1,6 +1,18 @@
+#pragma once
+
 /*
   Model Loading Namespace from Object Files
 */
+
+#include "glm/glm.hpp"
+#include "../utility/model.hpp"
+
+#include <unordered_map>
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <functional>
+#include <sstream>
 
 namespace obj{
 

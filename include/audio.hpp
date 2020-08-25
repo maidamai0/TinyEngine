@@ -5,10 +5,10 @@
 #include <unordered_map>
 
 #include "SDL2/SDL_mixer.h"
+#include "helpers/common.h"
 
 class Audio {
 public:
-  using slist = std::initializer_list<std::string>;
 
   bool enabled = false;
 

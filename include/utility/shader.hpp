@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GL/glew.h"
-
 #include <boost/filesystem.hpp>
+#include <glm/glm.hpp>
 
 #include <initializer_list>
 #include <iostream>
@@ -11,7 +11,7 @@
 #include <unordered_map>
 #include <vector>
 
-using slist = std::initializer_list<std::string>;
+#include "../helpers/common.h"
 
 class Shader {
 public:
@@ -69,16 +69,16 @@ public:
 };
 
 void Shader::setup(slist _s) {
-  boost::filesystem::path data_dir(boost::filesystem::current_path());
+  // boost::filesystem::path data_dir(boost::filesystem::current_path());
   std::vector<std::string> s = _s;
 
   if (s.size() == 2) {
-    vertexShader = addProgram((data_dir / s[0]).string(), GL_VERTEX_SHADER);
-    fragmentShader = addProgram((data_dir / s[1]).string(), GL_FRAGMENT_SHADER);
+    vertexShader = addProgram((s[0]), GL_VERTEX_SHADER);
+    fragmentShader = addProgram((s[1]), GL_FRAGMENT_SHADER);
   } else if (s.size() == 3) {
-    vertexShader = addProgram((data_dir / s[0]).string(), GL_VERTEX_SHADER);
-    geometryShader = addProgram((data_dir / s[1]).string(), GL_GEOMETRY_SHADER);
-    fragmentShader = addProgram((data_dir / s[2]).string(), GL_FRAGMENT_SHADER);
+    vertexShader = addProgram((s[0]), GL_VERTEX_SHADER);
+    geometryShader = addProgram((s[1]), GL_GEOMETRY_SHADER);
+    fragmentShader = addProgram((s[2]), GL_FRAGMENT_SHADER);
   } else
     std::cout << "Number of shaders not recognized." << std::endl;
 }

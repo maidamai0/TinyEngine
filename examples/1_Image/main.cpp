@@ -3,6 +3,7 @@
 #include "../../include/helpers/color.h"
 
 #include "effects.h"
+#include "helpers/common.h"
 
 int main( int argc, char* args[] ) {
 
@@ -12,9 +13,9 @@ int main( int argc, char* args[] ) {
 
 	Tiny::view.interface = interfaceFunc;
 
-	Texture tex(image::load("canyon.png"));		//Load Texture with Image
+	Texture tex(image::load(full_path("canyon.png").c_str()));		//Load Texture with Image
 	Square2D flat;														//Create Primitive Model
-	Shader effect({"shader/effect.vs", "shader/effect.fs"}, {"in_Quad", "in_Tex"});
+	Shader effect({full_path("shader/effect.vs").c_str(), full_path("shader/effect.fs").c_str()}, {"in_Quad", "in_Tex"});
 
 	Tiny::view.pipeline = [&](){
 

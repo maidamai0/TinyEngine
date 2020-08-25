@@ -1,3 +1,12 @@
+#pragma once
+
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
+#include "glm/glm.hpp"
+
+#include <string>
+#include <functional>
+
 namespace image {
 
   SDL_Surface* load(std::string path){

@@ -1,12 +1,18 @@
+#pragma once
+
 /*
     Effects File. Contains all Parameters for effects.
 */
+
+
+#include "imgui/imgui.h"
+#include "helpers/common.h"
 
 int ind = 0;    //Effect Index
 int res = 100;  //Pixelate Effect
 int bits = 4;   //Bitreduce Effect
 
-Handle interfaceFunc = [&](){
+Handle interfaceFunc = [](){
   /* Do Something */
   ImGui::Text("Shader Effects");
   ImGui::DragInt("Effect", &ind, 1, 0, 2);

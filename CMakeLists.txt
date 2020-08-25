@@ -17,6 +17,7 @@ find_package(Boost COMPONENTS filesystem REQUIRED )
 link_libraries(GLEW::GLEW glm  SDL2::SDL2main SDL2::SDL2-static SDL2::SDL2_image SDL2::SDL2_mixer SDL2::SDL2_ttf Boost::filesystem)
 
 add_subdirectory(include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 link_libraries(imgui)
 add_subdirectory(examples)
