@@ -1,7 +1,7 @@
-#include "../../TinyEngine.h"
 #include "../../include/helpers/color.h"
 
 #include "model.h"
+#include "helpers/common.h"
 
 int main( int argc, char* args[] ) {
 
@@ -13,7 +13,7 @@ int main( int argc, char* args[] ) {
 
 	Model mesh(_construct);														//Construct a Mesh
 	mesh.shift(glm::vec3(-32.0, -15.0, -32.0));				//Translate Mesh
-	Shader defaultShader({"shader/default.vs", "shader/default.fs"}, {"in_Position", "in_Normal"});
+	Shader defaultShader({full_path("shader/default.vs").c_str(), full_path("shader/default.fs").c_str()}, {"in_Position", "in_Normal"});
 
 	Tiny::view.pipeline = [&](){											//Setup Drawing Pipeline
 
