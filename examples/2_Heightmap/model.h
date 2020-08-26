@@ -1,4 +1,9 @@
 #include "noise/noise.h"
+#include "../../TinyEngine.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+
+#include <ctime>
 
 //Model Stuff
 int SEED = 10;
@@ -50,7 +55,7 @@ void setup(){
 };
 
 // Event Handler
-std::function<void()> eventHandler = [&](){
+std::function<void()> eventHandler = [](){
 
   if(Tiny::event.scroll.posy && zoom <= 0.3){
     zoom += zoomInc;
@@ -76,7 +81,7 @@ std::function<void()> eventHandler = [&](){
 };
 
 // Model Constructing Function
-std::function<void(Model* m)> _construct = [&](Model* h){
+std::function<void(Model* m)> _construct = [](Model* h){
   //Loop over all positions and add the triangles!
   for(int i = 0; i < dim.x-1; i++){
     for(int j = 0; j < dim.y-1; j++){
