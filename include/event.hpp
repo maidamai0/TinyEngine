@@ -1,6 +1,9 @@
 #include "SDL2/SDL_events.h"
 #include "view.hpp"
 
+#include <deque>
+#include <unordered_map>
+
 struct Scroll {
   bool posx, posy, negx, negy;
   void reset() { posx = posy = negx = negy = false; }
