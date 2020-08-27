@@ -69,7 +69,7 @@ struct Branch{
   int ID = 0;         //For Leaf Hashing
   bool leaf = true;
 
-  Branch *A, *B, *P;  //Child A, B and Parent
+  Branch *A=nullptr, *B=nullptr, *P=nullptr;  //Child A, B and Parent
 
   //Parameters
   float ratio, spread, splitsize;
@@ -204,7 +204,12 @@ glm::vec3 Branch::leafdensity(int searchdepth){
   glm::vec3 rel = glm::vec3(0);                     //Relative position to start node
   while(C->depth > 0 && searchdepth-- >= 0){        //Descend tree
     rel += C->length*C->dir;                        //Add relative position
-    C = C->P;                                       //Move to parent
+    //Move to parent
+    if(C->P) {
+      C = C->P;
+    }else {
+      break;
+    }
   }
 
   std::function<glm::vec3(Branch*)> leafaverage = [&](Branch* b)->glm::vec3{

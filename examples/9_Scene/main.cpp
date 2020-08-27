@@ -1,6 +1,7 @@
 #include "../../include/helpers/color.h"
 #include "../../include/helpers/object.h"
 
+#include "helpers/common.h"
 #include "model.h"
 
 int main( int argc, char* args[] ) {
@@ -16,7 +17,7 @@ int main( int argc, char* args[] ) {
 	Shader shader({full_path("shader/default.vs").c_str(), full_path("shader/default.fs").c_str()}, {"in_Position", "in_Normal", "in_Color"});
 	Shader cubedepth({full_path("shader/cubedepth.vs").c_str(), full_path("shader/cubedepth.gs").c_str(), full_path("shader/cubedepth.fs").c_str()}, {"in_Position"});
 
-	std::string path = "object/";
+	std::string path = full_path("object/");
 	Model lamp(obj::load, path+"Lamp");
 	Model table(obj::load, path+"Table");
 	Model chair(obj::load, path+"Chair");

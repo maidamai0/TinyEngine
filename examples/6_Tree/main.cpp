@@ -11,6 +11,7 @@ int main( int argc, char* args[] ) {
 	Tiny::window("Procedural Tree", WIDTH, HEIGHT);
 	Tiny::event.handler = eventHandler;
 	Tiny::view.interface = interfaceFunc;
+	Tiny::view.showInterface = true;
 
 	setup();																				//Prepare Model Stuff
 
