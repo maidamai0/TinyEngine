@@ -1,6 +1,6 @@
-#include "../../TinyEngine.h"
 #include "../../include/helpers/color.h"
 
+#include "helpers/common.h"
 #include "model.h"
 
 int main( int argc, char* args[] ) {
@@ -14,7 +14,7 @@ int main( int argc, char* args[] ) {
 	Tiny::view.interface = interfaceFunc;	//Set Interface Function
 
 	Square2D flat;												//Flat geometry primitive
-	Shader julia({"shader/julia.vs", "shader/julia.fs"}, {"in_Quad", "in_Tex"});
+	Shader julia({full_path("shader/julia.vs").c_str(), full_path("shader/julia.fs").c_str()}, {"in_Quad", "in_Tex"});
 
 	Tiny::view.pipeline = [&](){
 

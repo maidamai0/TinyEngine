@@ -1,4 +1,3 @@
-#include "../../TinyEngine.h"
 #include "../../include/helpers/color.h"
 #include "../../include/helpers/object.h"
 
@@ -14,8 +13,8 @@ int main( int argc, char* args[] ) {
 	Tiny::event.handler  = eventHandler;
 	Tiny::view.interface = interfaceFunc;
 
-	Shader shader({"shader/default.vs", "shader/default.fs"}, {"in_Position", "in_Normal", "in_Color"});
-	Shader cubedepth({"shader/cubedepth.vs", "shader/cubedepth.gs", "shader/cubedepth.fs"}, {"in_Position"});
+	Shader shader({full_path("shader/default.vs").c_str(), full_path("shader/default.fs").c_str()}, {"in_Position", "in_Normal", "in_Color"});
+	Shader cubedepth({full_path("shader/cubedepth.vs").c_str(), full_path("shader/cubedepth.gs").c_str(), full_path("shader/cubedepth.fs").c_str()}, {"in_Position"});
 
 	std::string path = "object/";
 	Model lamp(obj::load, path+"Lamp");

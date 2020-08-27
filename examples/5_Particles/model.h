@@ -1,5 +1,9 @@
-const int WIDTH = 800;
-const int HEIGHT = 800;
+#pragma once
+
+#include "../../TinyEngine.h"
+
+constexpr auto WIDTH = 800;
+constexpr auto HEIGHT = 800;
 
 float zoom = 0.05;
 float zoomInc = 0.001;
@@ -13,7 +17,7 @@ void setup(){
   projection = glm::ortho(-(float)Tiny::view.WIDTH*zoom, (float)Tiny::view.WIDTH*zoom, -(float)Tiny::view.HEIGHT*zoom, (float)Tiny::view.HEIGHT*zoom, -800.0f, 500.0f);
 };
 
-std::function<void()> eventHandler = [&](){
+std::function<void()> eventHandler = [](){
 
   if(Tiny::event.scroll.posy && zoom <= 0.3){
     zoom += zoomInc;

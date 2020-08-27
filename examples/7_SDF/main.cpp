@@ -1,4 +1,4 @@
-#include "../../TinyEngine.h"
+
 #include "../../include/helpers/color.h"
 
 #include "model.h"
@@ -14,7 +14,7 @@ int main( int argc, char* args[] ) {
 	Tiny::view.interface = interfaceFunc;		//Set Interface Function
 
 	Square2D flat;													//Flat geometry primitive
-	Shader sdf({"shader/sdf.vs", "shader/sdf.fs"}, {"in_Quad", "in_Tex"});
+	Shader sdf({full_path("shader/sdf.vs").c_str(), full_path("shader/sdf.fs").c_str()}, {"in_Quad", "in_Tex"});
 
 	Tiny::view.pipeline = [&](){
 

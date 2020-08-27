@@ -1,4 +1,8 @@
+#include "../../TinyEngine.h"
+
 //GPU Accelerated Voronoi Controller Stuff
+
+#include "poisson.h"
 
 bool drawcenter = false;
 
@@ -18,7 +22,7 @@ std::vector<glm::vec2> offset;
 float K = 4*4*4*4*64;
 float R = 2.0f*sqrt(4.0f/3.14159265f/K);
 
-std::function<void()> interfaceFunc = [&](){
+std::function<void()> interfaceFunc = [](){
 
 
   ImGui::SetNextWindowSize(ImVec2(480, 260), ImGuiCond_Once);

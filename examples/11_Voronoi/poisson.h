@@ -1,5 +1,8 @@
 #include <random>
 #include <vector>
+#include <functional>
+
+#include "glm/glm.hpp"
 
 namespace sample{
 
